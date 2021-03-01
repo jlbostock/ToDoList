@@ -10,7 +10,6 @@ using ToDoListWebApi.Domain.ViewModels;
 namespace ToDoListWebApi.WebApi.Controllers
 {
     [ApiController]
-    //[Route("[controller]")]
     [Route("{controller}/{action}/{id?}")]
     public class ToDoListController : ControllerBase
     {
@@ -31,7 +30,6 @@ namespace ToDoListWebApi.WebApi.Controllers
         }
 
         [HttpGet]
-        //[Route("{controller}/{action}/{id}")]
         public IActionResult Get(int id)
         {
             throw new NotImplementedException();
