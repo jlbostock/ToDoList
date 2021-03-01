@@ -86,6 +86,27 @@ namespace ToDoListWebApi.Test
         }
 
         [TestMethod]
+        public async Task AddToDoItem_NoNameTask()
+        {
+            using (var context = new ToDoListContext(ContextOptions))
+            {
+                // arrange
+                var toDoListService = new ToDoListService(new ToDoItemRepository(context), _mapper);
+
+                var newToDo = new ToDoItemVm
+                {
+                    TaskName = ""
+                };
+
+                // act
+                var result = await toDoListService.AddToDoItem(newToDo);
+
+                // assert
+                Assert.IsNull(result);
+            }
+        }
+
+        [TestMethod]
         public async Task RemoveToDoItem_Expected()
         {
             using (var context = new ToDoListContext(ContextOptions))
