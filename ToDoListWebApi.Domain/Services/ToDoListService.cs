@@ -29,6 +29,8 @@ namespace ToDoListWebApi.Domain.Services
 
             var newToDoItem = _mapper.Map<ToDoItem>(((ToDoItemVm)newToDoItemVm));
 
+            if (String.IsNullOrWhiteSpace(newToDoItem.TaskName)) return null;
+
             var result = await _todoRepo.Add(newToDoItem);
 
             return _mapper.Map<ToDoItemVm>(result);
