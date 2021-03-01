@@ -48,5 +48,10 @@ namespace ToDoListWebApi.Domain.Services
             var result = await _todoRepo.GetAll();
             return _mapper.Map<IEnumerable<ToDoItemVm>>(result);
         }
+
+        public async Task ClearList()
+        {
+            await _todoRepo.Clear();
+        }
     }
 }

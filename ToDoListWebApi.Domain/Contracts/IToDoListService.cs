@@ -11,5 +11,6 @@ namespace ToDoListWebApi.Domain.Contracts
         Task<ToDoItemVm> AddToDoItem(ToDoItemVm newToDoItemVm);
         Task<ToDoItemVm> RemoveToDoItem(int id);
         Task<IEnumerable<ToDoItemVm>> GetAllToDoItems();
+        Task ClearList();
     }
 }

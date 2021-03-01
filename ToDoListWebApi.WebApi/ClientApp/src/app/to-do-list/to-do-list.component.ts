@@ -5,7 +5,8 @@ import { ToDoListService } from './to-do-list.service';
 
 @Component({
   selector: 'to-do-list',
-  templateUrl: './to-do-list.component.html'
+  templateUrl: './to-do-list.component.html',
+  styleUrls: ['./to-do-list.component.css']
 })
 export class ToDoListComponent {
   public myList: ToDo[];
@@ -34,6 +35,17 @@ export class ToDoListComponent {
       },
       error => {
         console.log(error)
+      }
+    );
+  }
+
+  public clear(): void {
+    this.toDoListService.clearToDoList().subscribe(
+      result => {
+        this.getToDoList();
+      },
+      error => {
+        console.log(error);
       }
     );
   }

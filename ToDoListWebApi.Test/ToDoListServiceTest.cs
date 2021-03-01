@@ -146,6 +146,22 @@ namespace ToDoListWebApi.Test
             }
         }
 
+        [TestMethod]
+        public async Task ClearList_Expected()
+        {
+            using (var context = new ToDoListContext(ContextOptions))
+            {
+                // arrange
+                var toDoListService = new ToDoListService(new ToDoItemRepository(context), _mapper);
+
+                // act
+                await toDoListService.ClearList();
+
+                // assert
+                Assert.IsFalse(context.Set<ToDoItem>().Any());
+            }
+        }
+
         private void Seed()
         {
             using (var context = new ToDoListContext(ContextOptions))

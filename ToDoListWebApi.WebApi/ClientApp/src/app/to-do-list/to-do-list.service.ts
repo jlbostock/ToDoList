@@ -30,6 +30,10 @@ export class ToDoListService {
     return this.http.post<ToDo>(`${this.endPoint}/create`, newToDo);
   }
 
+  public clearToDoList(): Observable<any> {
+    return this.http.delete<ToDo>(`${this.endPoint}/clear`);
+  }
+
   public deleteToDo(id: number): Observable<any> {
     return this.http.delete(`${this.endPoint}/delete/${id}`);
   }

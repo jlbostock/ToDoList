@@ -60,9 +60,11 @@ namespace ToDoListWebApi.WebApi.Controllers
         }
 
         [HttpDelete]
-        public IActionResult Clear()
+        public async Task<IActionResult> Clear()
         {
-            throw new NotImplementedException();
+            await _toDoListService.ClearList();
+
+            return Ok();
         }
     }
 }
