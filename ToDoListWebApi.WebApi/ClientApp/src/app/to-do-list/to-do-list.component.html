@@ -1,0 +1,29 @@
+<h1>To Do List</h1>
+
+<div>
+  <label>Task Name:
+    <input #taskName />
+  </label>
+  <button (click)="add(taskName.value); taskName.value = ''">
+    add
+  </button>
+</div>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="myList">
+  <thead>
+    <tr>
+      <th>Task Name</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of myList">
+      <td>{{ todo.taskName }}</td>
+      <td>
+        <button (click)="delete(todo.id)">
+          delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
