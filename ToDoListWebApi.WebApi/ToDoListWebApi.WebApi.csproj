@@ -34,6 +34,7 @@
     <None Remove="ClientApp\src\app\to-do-list\to-do-list.component.ts" />
     <None Remove="ClientApp\src\app\to-do-list\to-do-list.service.ts" />
     <None Remove="ClientApp\src\app\to-do-list\to-do.ts" />
+    <None Remove="ClientApp\tsconfig.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,6 +47,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\to-do-list\to-do-list.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\to-do-list\to-do-list.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\to-do-list\to-do.ts" />
+    <Content Include="ClientApp\tsconfig.json" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
