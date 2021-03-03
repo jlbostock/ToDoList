@@ -43,12 +43,6 @@ namespace ToDoListWebApi.WebApi.Controllers
             return Ok(result);
         }
 
-        [HttpPut]
-        public Task<IActionResult> Update(int id, ToDoItemVm toDoItem)
-        {
-            throw new NotImplementedException();
-        }
-
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
